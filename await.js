@@ -26,10 +26,18 @@ function clickLoginButton() {
 }
 
 async function performLogin() {
-    await accessApplication();
+    /*await accessApplication();
     await enterCredentials();
     await clickLoginButton();
     console.log("Login completed ... ");
+
+
+     */
+    accessApplication();
+    enterCredentials();
+    clickLoginButton();
+    console.log("Login completed ... ");
+
 }
 
 performLogin();
