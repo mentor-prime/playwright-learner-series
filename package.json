@@ -1,0 +1,23 @@
+{
+  "name": "playwright-learner-series",
+  "version": "1.0.0",
+  "description": "This is the new file where we would write all things.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mentor-prime/playwright-learner-series.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mentor-prime/playwright-learner-series/issues"
+  },
+  "homepage": "https://github.com/mentor-prime/playwright-learner-series#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0"
+  }
+}
