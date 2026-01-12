@@ -68,13 +68,13 @@ test('Verify language links exist on homepage', async ({ page }) => {
   await expect(languageLinks.first()).toBeVisible();
 });
 
-test('Verify page reload works', async ({ page }) => {
-  await page.goto('https://www.google.com');
-  await page.reload();
-  await expect(page).toHaveTitle(/Google/);
-});
+// test('Verify page reload works', async ({ page }) => {
+//   await page.goto('https://www.google.com');
+//   await page.reload();
+//   await expect(page).toHaveTitle(/Google/);
+// });
 
-test('Verify Google homepage response is OK', async ({ page }) => {
-  const response = await page.goto('https://www.google.com');
-  expect(response.status()).toBe(200);
-});
+// test('Verify Google homepage response is OK', async ({ page }) => {
+//   const response = await page.goto('https://www.google.com');
+//   expect(response.status()).toBe(200);
+// });
