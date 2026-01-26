@@ -19,3 +19,12 @@ test("@PA-220 Dashboard - Verify that user information is correctly showed", asy
     await loginPage.clickLoginButton();
     await dashboardPage.verifyUserInformationShouldDisplay();
 });
+
+test("@PA-225 - Dashboard - Check the functionality of subscribing to the newsletter", async ({page}) => {
+    await dashboardPage.accessApplication();
+    await dashboardPage.verifyLoginLinkShouldBeDisplayed();
+    await dashboardPage.verifyNewLetterBlockShouldDisplay();
+    await dashboardPage.enterEmailForNewLetterSubscription();
+    await dashboardPage.clickNewsletterSubscribeButton();
+    await dashboardPage.verifyNewLetterSubscriptionMessageShouldDisplay();
+})

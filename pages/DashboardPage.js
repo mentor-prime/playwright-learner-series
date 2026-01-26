@@ -1,12 +1,13 @@
 const { expect } = require("@playwright/test");
 const HeaderObjects = require("../page-objects/HeaderObjects.js");
 const { Helper } = require("../utils/Helper.js");
-const {Users} = require("../test-data/Users"); // adjust path if your folder differs
+const {Users} = require("../test-data/Users");
+const DashboardObjects = require('../page-objects/DashboardObjects');
 
 class DashboardPage {
     constructor(page) {
         this.page = page;
-        this.helper = new Helper(page); // ✅ now it's a real constructor
+        this.helper = new Helper(page);
     }
 
     async accessApplication() {
@@ -24,6 +25,24 @@ class DashboardPage {
 
     async verifyUserInformationShouldDisplay() {
         await expect(this.page.locator('a.account').nth(0)).toHaveText(Users.username);
+    }
+
+    async verifyNewLetterBlockShouldDisplay() {
+        await expect(this.page.locator(DashboardObjects.newsletter.newsletter_section)).toBeVisible();
+        await expect(this.page.locator(DashboardObjects.newsletter.field_email)).toBeVisible();
+        await expect(this.page.locator(DashboardObjects.newsletter.button_subscribe)).toBeVisible();
+    }
+
+    async enterEmailForNewLetterSubscription() {
+        await this.page.locator(DashboardObjects.newsletter.field_email).fill(Users.username);
+    }
+
+    async clickNewsletterSubscribeButton() {
+        await this.page.locator(DashboardObjects.newsletter.button_subscribe).click();
+    }
+
+    async verifyNewLetterSubscriptionMessageShouldDisplay() {
+        await expect(this.page.locator(".newsletter-result-block")).toHaveText("Thank you for signing up! A verification email has been sent. We appreciate your interest.")
     }
 }
 
