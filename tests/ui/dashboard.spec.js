@@ -9,4 +9,8 @@ test.beforeEach(async ({page}) =>{
 
 test("@PA-220 Dashboard - Verify that user information is correctly showed", async ({page}) => {
     await dashboardPage.accessApplication();
+    await dashboardPage.verifyLoginLinkShouldBeDisplayed();
+
+
+
 })
