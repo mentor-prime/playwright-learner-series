@@ -53,6 +53,14 @@ class DashboardPage {
     async verifyCartCountToBe1() {
         await expect(this.page.locator(".cart-qty")).toHaveText(/1/);
     }
+
+    async clickLogoutLink() {
+        await expect(this.page.locator(HeaderObjects.menu.link_logout)).toBeVisible();
+    }
+
+    async verifyUserShouldBeLoggedOut() {
+        await expect(this.page.locator('body')).not.toHaveText(Users.username);
+    }
 }
 
 module.exports = { DashboardPage };

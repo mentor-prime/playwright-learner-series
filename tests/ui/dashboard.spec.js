@@ -5,6 +5,8 @@ const {LoginPage} = require('../../pages/LoginPage');
 let dashboardPage;
 let loginPage;
 
+test.describe.configure({ mode: "parallel" });
+
 test.beforeEach(async ({page}) =>{
     dashboardPage = new DashboardPage(page);
     loginPage = new LoginPage(page);
@@ -20,7 +22,20 @@ test("@PA-220 Dashboard - Verify that user information is correctly showed", asy
     await dashboardPage.verifyUserInformationShouldDisplay();
 });
 
-test.only("@PA-222 Dashboard - Check the shopping cart displays the correct number of items", async ({page}) => {
+test("@PA-221 Dashboard - Verify that logout link is working properly", async({page}) => {
+    await dashboardPage.accessApplication();
+    await dashboardPage.verifyLoginLinkShouldBeDisplayed();
+    await dashboardPage.clickLoginLink();
+    await loginPage.verifyFieldsAtLoginPage();
+    await loginPage.fillCredentials();
+    await loginPage.clickLoginButton();
+    await dashboardPage.verifyUserInformationShouldDisplay();
+    await dashboardPage.clickLogoutLink();
+    await dashboardPage.verifyUserShouldBeLoggedOut();
+});
+
+
+test("@PA-222 Dashboard - Check the shopping cart displays the correct number of items", async ({page}) => {
 
     await dashboardPage.accessApplication();
     await dashboardPage.verifyLoginLinkShouldBeDisplayed();
