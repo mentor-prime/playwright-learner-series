@@ -61,6 +61,19 @@ class DashboardPage {
     async verifyUserShouldBeLoggedOut() {
         await expect(this.page.locator('body')).not.toHaveText(Users.username);
     }
+
+    async verifyPageNavigations() {
+        const categories = DashboardObjects.categories;
+        for (const [categoryName, url] of Object.entries(categories)) {
+            console.log(`Navigating to: ${categoryName}`);
+            const response = await this.page.goto(url, {
+                waitUntil: 'networkidle'
+            });
+            expect(response.status()).toBe(200);
+            await expect(this.page).toHaveURL(url);
+            console.log(`✓ ${categoryName} - PASSED (Status: ${response.status()})`);
+        }
+    }
 }
 
 module.exports = { DashboardPage };

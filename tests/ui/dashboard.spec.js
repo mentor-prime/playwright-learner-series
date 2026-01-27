@@ -41,6 +41,17 @@ test("@PA-222 Dashboard - Check the shopping cart displays the correct number of
     await dashboardPage.verifyCartCountToBe1();
 });
 
+test("@PA-224 Dashboard - Verify that each category link leads to the correct category page", async(page) => {
+    await dashboardPage.accessApplication();
+    await dashboardPage.verifyLoginLinkShouldBeDisplayed();
+    await dashboardPage.clickLoginLink();
+    await loginPage.verifyFieldsAtLoginPage();
+    await loginPage.fillCredentials();
+    await loginPage.clickLoginButton();
+    await dashboardPage.verifyUserInformationShouldDisplay();
+    await dashboardPage.verifyPageNavigations();
+});
+
 test("@PA-225 - Dashboard - Check the functionality of subscribing to the newsletter", async ({page}) => {
     await dashboardPage.accessApplication();
     await dashboardPage.verifyLoginLinkShouldBeDisplayed();
