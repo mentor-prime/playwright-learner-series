@@ -44,6 +44,15 @@ class DashboardPage {
     async verifyNewLetterSubscriptionMessageShouldDisplay() {
         await expect(this.page.locator(".newsletter-result-block")).toHaveText("Thank you for signing up! A verification email has been sent. We appreciate your interest.")
     }
+
+    async clickOnATCButton() {
+        await this.page.getByRole('button', { name: 'Add to cart' }).nth(1).click();
+        await this.page.waitForLoadState('load');
+    }
+
+    async verifyCartCountToBe1() {
+        await expect(this.page.locator(".cart-qty")).toHaveText(/1/);
+    }
 }
 
 module.exports = { DashboardPage };
