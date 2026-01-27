@@ -34,14 +34,11 @@ test("@PA-221 Dashboard - Verify that logout link is working properly", async({p
     await dashboardPage.verifyUserShouldBeLoggedOut();
 });
 
-
 test("@PA-222 Dashboard - Check the shopping cart displays the correct number of items", async ({page}) => {
-
     await dashboardPage.accessApplication();
     await dashboardPage.verifyLoginLinkShouldBeDisplayed();
     await dashboardPage.clickOnATCButton();
     await dashboardPage.verifyCartCountToBe1();
-
 });
 
 test("@PA-225 - Dashboard - Check the functionality of subscribing to the newsletter", async ({page}) => {
