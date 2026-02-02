@@ -39,3 +39,13 @@ test("@PA-225 - Dashboard - Check the functionality of subscribing to the newsle
     await dashboardPage.clickNewsletterSubscribeButton();
     await dashboardPage.verifyNewLetterSubscriptionMessageShouldDisplay();
 });
+
+
+test("@PA-225 - Dashboard - Check the functionality of subscribing to the newsletter", async ({ dashboardPage }) => {
+    await dashboardPage.accessApplication();
+    await dashboardPage.verifyLoginLinkShouldBeDisplayed();
+    await dashboardPage.verifyNewLetterBlockShouldDisplay();
+    await dashboardPage.enterEmailForNewLetterSubscription();
+    await dashboardPage.clickNewsletterSubscribeButton();
+    await dashboardPage.verifyNewLetterSubscriptionMessageShouldDisplay();
+});
