@@ -1,0 +1,307 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - link "Tricentis Demo Web Shop" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Tricentis Demo Web Shop" [ref=e7]
+      - list [ref=e10]:
+        - listitem [ref=e11]:
+          - link "test123+1@gmail.com" [ref=e12] [cursor=pointer]:
+            - /url: /customer/info
+        - listitem [ref=e13]:
+          - link "Log out" [ref=e14] [cursor=pointer]:
+            - /url: /logout
+        - listitem [ref=e15]:
+          - link "Shopping cart (1)" [ref=e16] [cursor=pointer]:
+            - /url: /cart
+            - generic [ref=e17]: Shopping cart
+            - generic [ref=e18]: (1)
+        - listitem [ref=e19]:
+          - link "Wishlist (0)" [ref=e20] [cursor=pointer]:
+            - /url: /wishlist
+            - generic [ref=e21]: Wishlist
+            - generic [ref=e22]: (0)
+      - generic [ref=e24]:
+        - status [ref=e25]
+        - textbox [ref=e26]: Search store
+        - button "Search" [ref=e27] [cursor=pointer]
+    - list [ref=e29]:
+      - listitem [ref=e30]:
+        - link "Books" [ref=e31] [cursor=pointer]:
+          - /url: /books
+      - listitem [ref=e32]:
+        - link "Computers" [ref=e33] [cursor=pointer]:
+          - /url: /computers
+      - listitem [ref=e34]:
+        - link "Electronics" [ref=e35] [cursor=pointer]:
+          - /url: /electronics
+      - listitem [ref=e36]:
+        - link "Apparel & Shoes" [ref=e37] [cursor=pointer]:
+          - /url: /apparel-shoes
+      - listitem [ref=e38]:
+        - link "Digital downloads" [ref=e39] [cursor=pointer]:
+          - /url: /digital-downloads
+      - listitem [ref=e40]:
+        - link "Jewelry" [ref=e41] [cursor=pointer]:
+          - /url: /jewelry
+      - listitem [ref=e42]:
+        - link "Gift Cards" [ref=e43] [cursor=pointer]:
+          - /url: /gift-cards
+    - generic:
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - strong [ref=e47]: Categories
+          - list [ref=e49]:
+            - listitem [ref=e50]:
+              - link "Books" [ref=e51] [cursor=pointer]:
+                - /url: /books
+            - listitem [ref=e52]:
+              - link "Computers" [ref=e53] [cursor=pointer]:
+                - /url: /computers
+            - listitem [ref=e54]:
+              - link "Electronics" [ref=e55] [cursor=pointer]:
+                - /url: /electronics
+              - list [ref=e56]:
+                - listitem [ref=e57]:
+                  - link "Camera, photo" [ref=e58] [cursor=pointer]:
+                    - /url: /camera-photo
+                - listitem [ref=e59]:
+                  - link "Cell phones" [ref=e60] [cursor=pointer]:
+                    - /url: /cell-phones
+            - listitem [ref=e61]:
+              - link "Apparel & Shoes" [ref=e62] [cursor=pointer]:
+                - /url: /apparel-shoes
+            - listitem [ref=e63]:
+              - link "Digital downloads" [ref=e64] [cursor=pointer]:
+                - /url: /digital-downloads
+            - listitem [ref=e65]:
+              - link "Jewelry" [ref=e66] [cursor=pointer]:
+                - /url: /jewelry
+            - listitem [ref=e67]:
+              - link "Gift Cards" [ref=e68] [cursor=pointer]:
+                - /url: /gift-cards
+        - generic [ref=e69]:
+          - strong [ref=e71]: Manufacturers
+          - list [ref=e73]:
+            - listitem [ref=e74]:
+              - link "Tricentis" [ref=e75] [cursor=pointer]:
+                - /url: /tricentis
+        - generic [ref=e76]:
+          - strong [ref=e78]: Newsletter
+          - generic [ref=e80]:
+            - text: "Sign up for our newsletter:"
+            - textbox [ref=e82]
+            - button "Subscribe" [ref=e84] [cursor=pointer]
+      - generic [ref=e85]:
+        - list [ref=e87]:
+          - listitem [ref=e88]:
+            - link "Home" [ref=e90] [cursor=pointer]:
+              - /url: /
+            - text: /
+          - listitem [ref=e91]:
+            - link "Electronics" [ref=e93] [cursor=pointer]:
+              - /url: /electronics
+            - text: /
+          - listitem [ref=e94]:
+            - link "Camera, photo" [ref=e96] [cursor=pointer]:
+              - /url: /camera-photo
+            - text: /
+          - listitem [ref=e97]:
+            - strong [ref=e98]: 1MP 60GB Hard Drive Handycam Camcorder
+        - generic [ref=e102]:
+          - generic [ref=e103]:
+            - img "Picture of 1MP 60GB Hard Drive Handycam Camcorder" [ref=e106]
+            - generic [ref=e107]:
+              - heading "1MP 60GB Hard Drive Handycam Camcorder" [level=1] [ref=e109]
+              - generic [ref=e110]: Capture video to hard disk drive; 60 GB storage
+              - generic [ref=e111]: "Availability: In stock"
+              - generic [ref=e116]:
+                - link "495 review(s)" [ref=e117] [cursor=pointer]:
+                  - /url: /productreviews/44
+                - text: "|"
+                - link "Add your review" [ref=e118] [cursor=pointer]:
+                  - /url: /productreviews/44
+              - generic [ref=e120]: "349.00"
+              - button "Email a friend" [ref=e123] [cursor=pointer]
+              - button "Add to compare list" [ref=e125] [cursor=pointer]
+            - paragraph [ref=e127]: You’ll never miss a moment because of switching tapes or discs with this exclusive Tricentis camcorder. Its built-in 60GB hard disk drive offers plenty of storage as you zero in on your subjects with the professional-quality lens and a powerful 25x optical/2000x digital zoom. Compose shots using the 2.7-inch wide (16:9) touch-panel LCD display, and maintain total control and clarity with the super steady shot image stabilization system. Hybrid recording technology even gives you the choice to record video to either the internal hard disk drive or removable memory stick.
+          - generic [ref=e128]:
+            - generic [ref=e129]:
+              - strong [ref=e131]: Product tags
+              - generic:
+                - list:
+                  - listitem [ref=e132]:
+                    - link "cool" [ref=e133] [cursor=pointer]:
+                      - /url: /producttag/3/cool
+                    - text: (17)
+                  - listitem [ref=e134]: ","
+                  - listitem [ref=e135]:
+                    - link "awesome" [ref=e136] [cursor=pointer]:
+                      - /url: /producttag/8/awesome
+                    - text: (20)
+                  - listitem [ref=e137]: ","
+                  - listitem [ref=e138]:
+                    - link "camera" [ref=e139] [cursor=pointer]:
+                      - /url: /producttag/13/camera
+                    - text: (3)
+            - generic [ref=e140]:
+              - strong [ref=e142]: Customers who bought this item also bought
+              - generic [ref=e144]:
+                - link "Picture of 50's Rockabilly Polka Dot Top JR Plus Size" [ref=e146] [cursor=pointer]:
+                  - /url: /50s-rockabilly-polka-dot-top-jr-plus-size
+                  - img "Picture of 50's Rockabilly Polka Dot Top JR Plus Size" [ref=e147]
+                - generic [ref=e148]:
+                  - heading "50's Rockabilly Polka Dot Top JR Plus Size" [level=2] [ref=e149]:
+                    - link "50's Rockabilly Polka Dot Top JR Plus Size" [ref=e150] [cursor=pointer]:
+                      - /url: /50s-rockabilly-polka-dot-top-jr-plus-size
+                  - generic "546 review(s)" [ref=e151]
+                  - generic [ref=e154]:
+                    - generic [ref=e156]: "11.00"
+                    - button "Add to cart" [ref=e158] [cursor=pointer]
+              - generic [ref=e160]:
+                - link "Picture of Blue Jeans" [ref=e162] [cursor=pointer]:
+                  - /url: /blue-jeans
+                  - img "Picture of Blue Jeans" [ref=e163]
+                - generic [ref=e164]:
+                  - heading "Blue Jeans" [level=2] [ref=e165]:
+                    - link "Blue Jeans" [ref=e166] [cursor=pointer]:
+                      - /url: /blue-jeans
+                  - generic "613 review(s)" [ref=e167]
+                  - generic [ref=e170]:
+                    - generic [ref=e172]: "1.00"
+                    - button "Add to cart" [ref=e174] [cursor=pointer]
+              - generic [ref=e176]:
+                - link "Picture of 3rd Album" [ref=e178] [cursor=pointer]:
+                  - /url: /album-3
+                  - img "Picture of 3rd Album" [ref=e179]
+                - generic [ref=e180]:
+                  - heading "3rd Album" [level=2] [ref=e181]:
+                    - link "3rd Album" [ref=e182] [cursor=pointer]:
+                      - /url: /album-3
+                  - generic "451 review(s)" [ref=e183]
+                  - generic [ref=e186]:
+                    - generic [ref=e188]: "1.00"
+                    - button "Add to cart" [ref=e190] [cursor=pointer]
+            - generic [ref=e191]:
+              - strong [ref=e193]: Related products
+              - generic [ref=e195]:
+                - link "Picture of Smartphone" [ref=e197] [cursor=pointer]:
+                  - /url: /smartphone
+                  - img "Picture of Smartphone" [ref=e198]
+                - generic [ref=e199]:
+                  - heading "Smartphone" [level=2] [ref=e200]:
+                    - link "Smartphone" [ref=e201] [cursor=pointer]:
+                      - /url: /smartphone
+                  - generic "1853 review(s)" [ref=e202]
+                  - generic [ref=e205]:
+                    - generic [ref=e207]: "100.00"
+                    - button "Add to cart" [ref=e209] [cursor=pointer]
+              - generic [ref=e211]:
+                - link "Picture of Camcorder" [ref=e213] [cursor=pointer]:
+                  - /url: /camcorder
+                  - img "Picture of Camcorder" [ref=e214]
+                - generic [ref=e215]:
+                  - heading "Camcorder" [level=2] [ref=e216]:
+                    - link "Camcorder" [ref=e217] [cursor=pointer]:
+                      - /url: /camcorder
+                  - generic "511 review(s)" [ref=e218]
+                  - generic [ref=e223]: "530.00"
+              - generic [ref=e225]:
+                - link "Picture of Digital SLR Camera 12.2 Mpixel" [ref=e227] [cursor=pointer]:
+                  - /url: /digital-slr-camera
+                  - img "Picture of Digital SLR Camera 12.2 Mpixel" [ref=e228]
+                - generic [ref=e229]:
+                  - heading "Digital SLR Camera 12.2 Mpixel" [level=2] [ref=e230]:
+                    - link "Digital SLR Camera 12.2 Mpixel" [ref=e231] [cursor=pointer]:
+                      - /url: /digital-slr-camera
+                  - generic "415 review(s)" [ref=e232]
+                  - generic [ref=e237]: From 500.00
+  - generic [ref=e238]:
+    - generic [ref=e239]:
+      - generic [ref=e240]:
+        - heading "Information" [level=3] [ref=e241]
+        - list [ref=e242]:
+          - listitem [ref=e243]:
+            - link "Sitemap" [ref=e244] [cursor=pointer]:
+              - /url: /sitemap
+          - listitem [ref=e245]:
+            - link "Shipping & Returns" [ref=e246] [cursor=pointer]:
+              - /url: /shipping-returns
+          - listitem [ref=e247]:
+            - link "Privacy Notice" [ref=e248] [cursor=pointer]:
+              - /url: /privacy-policy
+          - listitem [ref=e249]:
+            - link "Conditions of Use" [ref=e250] [cursor=pointer]:
+              - /url: /conditions-of-use
+          - listitem [ref=e251]:
+            - link "About us" [ref=e252] [cursor=pointer]:
+              - /url: /about-us
+          - listitem [ref=e253]:
+            - link "Contact us" [ref=e254] [cursor=pointer]:
+              - /url: /contactus
+      - generic [ref=e255]:
+        - heading "Customer service" [level=3] [ref=e256]
+        - list [ref=e257]:
+          - listitem [ref=e258]:
+            - link "Search" [ref=e259] [cursor=pointer]:
+              - /url: /search
+          - listitem [ref=e260]:
+            - link "News" [ref=e261] [cursor=pointer]:
+              - /url: /news
+          - listitem [ref=e262]:
+            - link "Blog" [ref=e263] [cursor=pointer]:
+              - /url: /blog
+          - listitem [ref=e264]:
+            - link "Recently viewed products" [ref=e265] [cursor=pointer]:
+              - /url: /recentlyviewedproducts
+          - listitem [ref=e266]:
+            - link "Compare products list" [ref=e267] [cursor=pointer]:
+              - /url: /compareproducts
+          - listitem [ref=e268]:
+            - link "New products" [ref=e269] [cursor=pointer]:
+              - /url: /newproducts
+      - generic [ref=e270]:
+        - heading "My account" [level=3] [ref=e271]
+        - list [ref=e272]:
+          - listitem [ref=e273]:
+            - link "My account" [ref=e274] [cursor=pointer]:
+              - /url: /customer/info
+          - listitem [ref=e275]:
+            - link "Orders" [ref=e276] [cursor=pointer]:
+              - /url: /customer/orders
+          - listitem [ref=e277]:
+            - link "Addresses" [ref=e278] [cursor=pointer]:
+              - /url: /customer/addresses
+          - listitem [ref=e279]:
+            - link "Shopping cart" [ref=e280] [cursor=pointer]:
+              - /url: /cart
+          - listitem [ref=e281]:
+            - link "Wishlist" [ref=e282] [cursor=pointer]:
+              - /url: /wishlist
+      - generic [ref=e283]:
+        - heading "Follow us" [level=3] [ref=e284]
+        - list [ref=e285]:
+          - listitem [ref=e286]:
+            - link "Facebook" [ref=e287] [cursor=pointer]:
+              - /url: http://www.facebook.com/nopCommerce
+          - listitem [ref=e288]:
+            - link "Twitter" [ref=e289] [cursor=pointer]:
+              - /url: https://twitter.com/nopCommerce
+          - listitem [ref=e290]:
+            - link "RSS" [ref=e291] [cursor=pointer]:
+              - /url: /news/rss/1
+          - listitem [ref=e292]:
+            - link "YouTube" [ref=e293] [cursor=pointer]:
+              - /url: http://www.youtube.com/user/nopCommerce
+          - listitem [ref=e294]:
+            - link "Google+" [ref=e295] [cursor=pointer]:
+              - /url: https://plus.google.com/+nopcommerce
+    - generic [ref=e296]:
+      - text: Powered by
+      - link "nopCommerce" [ref=e297] [cursor=pointer]:
+        - /url: http://www.nopcommerce.com/
+    - generic [ref=e298]: Copyright © 2026 Tricentis Demo Web Shop. All rights reserved.
+```
