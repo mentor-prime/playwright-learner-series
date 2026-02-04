@@ -27,6 +27,12 @@ test("@PA-222 Dashboard - Check the shopping cart displays the correct number of
     await dashboardPage.verifyCartCountToBe1();
 });
 
+test("@PA-223 Dashboard - verify the count displayed on wishlist", async ({loggedInDashboard}) => {
+    pdp.openCategory("Electronics");
+    pdp.openFirstItemFromCateogy();
+    pdp.addProductToWishList();
+});
+
 test("@PA-224 Dashboard - Verify that each category link leads to the correct category page", async ({ loggedInDashboard }) => {
     await loggedInDashboard.verifyPageNavigations();
 });
