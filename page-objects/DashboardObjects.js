@@ -14,6 +14,13 @@ module.exports = {
         link_apparelShoes:"https://demowebshop.tricentis.com/apparel-shoes",
         link_digitalDownloads:"https://demowebshop.tricentis.com/digital-downloads",
         link_jewelry:"https://demowebshop.tricentis.com/jewelry",
-        link_giftCards:"https://demowebshop.tricentis.com/gift-cards"
+        link_giftCards:"https://demowebshop.tricentis.com/gift-cards",
+        books: 'ul.top-menu a[href="/books"]',
+        computers: 'ul.top-menu a[href="/computers"]',
+        electronics: 'ul.top-menu a[href="/electronics"]',
+        apparel_and_shoes: 'ul.top-menu a[href="/apparel-shoes"]',
+        digital_downloads: 'ul.top-menu a[href="/digital-downloads"]',
+        jewely: 'ul.top-menu a[href="/jewelry"]',
+        gift_cards: 'ul.top-menu a[href="/gift-cards"]'
     }
 }
