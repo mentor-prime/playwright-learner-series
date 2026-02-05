@@ -1,78 +1,168 @@
 const { expect } = require("@playwright/test");
-const HeaderObjects = require("../page-objects/HeaderObjects.js");
-const { Helper } = require("../utils/Helper.js");
-const {Users} = require("../test-data/Users");
-const DashboardObjects = require('../page-objects/DashboardObjects');
+const { Users } = require("../test-data/Users"); // adjust path if needed
 
 class DashboardPage {
+    /**
+     * @param {import('@playwright/test').Page} page
+     */
     constructor(page) {
         this.page = page;
-        this.helper = new Helper(page);
+
+        // --- Header / Auth ---
+        this.loginLink = page.getByRole("link", { name: /log in/i });
+        this.logoutLink = page.getByRole("link", { name: /log out/i });
+        this.accountLink = page.locator("a.account");
+
+        // --- Newsletter ---
+        this.newsletterSection = page.locator(".block.block-newsletter");
+        this.newsletterEmail = page.locator("#newsletter-email");
+        this.newsletterSubscribeBtn = page.locator("#newsletter-subscribe-button");
+        this.newsletterResult = page.locator(".newsletter-result-block");
+
+        // --- Cart ---
+        this.cartQty = page.locator(".cart-qty");
+        this.addToCartButtons = page.getByRole("button", { name: /add to cart/i });
+
+        // --- Top menu (UI navigation) ---
+        this.menuBooks = page.locator('ul.top-menu a[href="/books"]');
+        this.menuComputers = page.locator('ul.top-menu a[href="/computers"]');
+        this.menuElectronics = page.locator('ul.top-menu a[href="/electronics"]');
+        this.menuApparelShoes = page.locator('ul.top-menu a[href="/apparel-shoes"]');
+        this.menuDigitalDownloads = page.locator('ul.top-menu a[href="/digital-downloads"]');
+        this.menuJewelry = page.locator('ul.top-menu a[href="/jewelry"]');
+        this.menuGiftCards = page.locator('ul.top-menu a[href="/gift-cards"]');
     }
 
-    async accessApplication() {
+    // ✅ Recommended method names
+    async open() {
         await this.page.goto("https://demowebshop.tricentis.com/");
+        await expect(this.page).toHaveURL(/demowebshop\.tricentis\.com/);
+    }
+
+    async expectLoginVisible() {
+        await expect(this.loginLink).toBeVisible();
+    }
+
+    async clickLogin() {
+        await this.loginLink.click();
+        await expect(this.page).toHaveURL(/\/login$/);
+    }
+
+    async expectUserLoggedIn(username) {
+        await expect(this.accountLink).toHaveText(username);
+    }
+
+    async expectLogoutVisible() {
+        await expect(this.logoutLink).toBeVisible();
+    }
+
+    async clickLogout() {
+        await this.logoutLink.click();
+        await expect(this.loginLink).toBeVisible();
+    }
+
+    async expectUserLoggedOut(username) {
+        await expect(this.page.locator("body")).not.toContainText(username);
+    }
+
+    async expectNewsletterBlockVisible() {
+        await expect(this.newsletterSection).toBeVisible();
+        await expect(this.newsletterEmail).toBeVisible();
+        await expect(this.newsletterSubscribeBtn).toBeVisible();
+    }
+
+    async subscribeToNewsletter(email) {
+        await this.newsletterEmail.fill(email);
+        await this.newsletterSubscribeBtn.click();
+    }
+
+    async expectNewsletterSuccessMessage() {
+        await expect(this.newsletterResult).toHaveText(
+            "Thank you for signing up! A verification email has been sent. We appreciate your interest."
+        );
+    }
+
+    async addToCartByIndex(index = 1) {
+        await this.addToCartButtons.nth(index).click();
+        await expect(this.cartQty).toBeVisible();
+    }
+
+    async expectCartQty(count) {
+        await expect(this.cartQty).toContainText(`(${count})`);
+    }
+
+    async verifyTopMenuNavigations() {
+        const cases = [
+            { name: "Books", locator: this.menuBooks, url: /\/books$/, heading: "Books" },
+            { name: "Computers", locator: this.menuComputers, url: /\/computers$/, heading: "Computers" },
+            { name: "Electronics", locator: this.menuElectronics, url: /\/electronics$/, heading: "Electronics" },
+            { name: "Apparel & Shoes", locator: this.menuApparelShoes, url: /\/apparel-shoes$/, heading: "Apparel & Shoes" },
+            { name: "Digital downloads", locator: this.menuDigitalDownloads, url: /\/digital-downloads$/, heading: "Digital downloads" },
+            { name: "Jewelry", locator: this.menuJewelry, url: /\/jewelry$/, heading: "Jewelry" },
+            { name: "Gift Cards", locator: this.menuGiftCards, url: /\/gift-cards$/, heading: "Gift Cards" },
+        ];
+
+        for (const c of cases) {
+            await c.locator.click();
+            await expect(this.page).toHaveURL(c.url);
+            await expect(this.page.getByRole("heading", { name: c.heading })).toBeVisible();
+            console.log(`✓ ${c.name} - navigation passed`);
+        }
+    }
+
+    // ---------------------------------------
+    // ✅ Backward-compatible aliases (your old method names)
+    // ---------------------------------------
+    async accessApplication() {
+        return this.open();
     }
 
     async verifyLoginLinkShouldBeDisplayed() {
-        await expect(this.page.locator(HeaderObjects.menu.link_login)).toBeVisible();
+        return this.expectLoginVisible();
     }
 
     async clickLoginLink() {
-        await this.helper.clickLocator(HeaderObjects.menu.link_login);
-        await this.page.waitForTimeout(3000);
+        return this.clickLogin();
     }
 
     async verifyUserInformationShouldDisplay() {
-        await expect(this.page.locator('a.account').nth(0)).toHaveText(Users.username);
+        return this.expectUserLoggedIn(Users.username);
     }
 
     async verifyNewLetterBlockShouldDisplay() {
-        await expect(this.page.locator(DashboardObjects.newsletter.newsletter_section)).toBeVisible();
-        await expect(this.page.locator(DashboardObjects.newsletter.field_email)).toBeVisible();
-        await expect(this.page.locator(DashboardObjects.newsletter.button_subscribe)).toBeVisible();
+        return this.expectNewsletterBlockVisible();
     }
 
     async enterEmailForNewLetterSubscription() {
-        await this.page.locator(DashboardObjects.newsletter.field_email).fill(Users.username);
+        return this.newsletterEmail.fill(Users.username);
     }
 
     async clickNewsletterSubscribeButton() {
-        await this.page.locator(DashboardObjects.newsletter.button_subscribe).click();
+        return this.newsletterSubscribeBtn.click();
     }
 
     async verifyNewLetterSubscriptionMessageShouldDisplay() {
-        await expect(this.page.locator(".newsletter-result-block")).toHaveText("Thank you for signing up! A verification email has been sent. We appreciate your interest.")
+        return this.expectNewsletterSuccessMessage();
     }
 
     async clickOnATCButton() {
-        await this.page.getByRole('button', { name: 'Add to cart' }).nth(1).click();
-        await this.page.waitForLoadState('load');
+        return this.addToCartByIndex(1);
     }
 
     async verifyCartCountToBe1() {
-        await expect(this.page.locator(".cart-qty")).toHaveText(/1/);
+        return this.expectCartQty(1);
     }
 
     async clickLogoutLink() {
-        await expect(this.page.locator(HeaderObjects.menu.link_logout)).toBeVisible();
+        return this.expectLogoutVisible();
     }
 
     async verifyUserShouldBeLoggedOut() {
-        await expect(this.page.locator('body')).not.toHaveText(Users.username);
+        return this.expectUserLoggedOut(Users.username);
     }
 
     async verifyPageNavigations() {
-        const categories = DashboardObjects.categories;
-        for (const [categoryName, url] of Object.entries(categories)) {
-            console.log(`Navigating to: ${categoryName}`);
-            const response = await this.page.goto(url, {
-                waitUntil: 'networkidle'
-            });
-            expect(response.status()).toBe(200);
-            await expect(this.page).toHaveURL(url);
-            console.log(`✓ ${categoryName} - PASSED (Status: ${response.status()})`);
-        }
+        return this.verifyTopMenuNavigations();
     }
 }
 

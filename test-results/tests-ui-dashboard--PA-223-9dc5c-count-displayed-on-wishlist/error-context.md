@@ -20,10 +20,10 @@
             - generic [ref=e17]: Shopping cart
             - generic [ref=e18]: (1)
         - listitem [ref=e19]:
-          - link "Wishlist (0)" [ref=e20] [cursor=pointer]:
+          - link "Wishlist (1)" [ref=e20] [cursor=pointer]:
             - /url: /wishlist
             - generic [ref=e21]: Wishlist
-            - generic [ref=e22]: (0)
+            - generic [ref=e22]: (1)
       - generic [ref=e24]:
         - status [ref=e25]
         - textbox [ref=e26]: Search store
@@ -64,161 +64,178 @@
             - listitem [ref=e54]:
               - link "Electronics" [ref=e55] [cursor=pointer]:
                 - /url: /electronics
-              - list [ref=e56]:
-                - listitem [ref=e57]:
-                  - link "Camera, photo" [ref=e58] [cursor=pointer]:
-                    - /url: /camera-photo
-                - listitem [ref=e59]:
-                  - link "Cell phones" [ref=e60] [cursor=pointer]:
-                    - /url: /cell-phones
-            - listitem [ref=e61]:
-              - link "Apparel & Shoes" [ref=e62] [cursor=pointer]:
+            - listitem [ref=e56]:
+              - link "Apparel & Shoes" [ref=e57] [cursor=pointer]:
                 - /url: /apparel-shoes
-            - listitem [ref=e63]:
-              - link "Digital downloads" [ref=e64] [cursor=pointer]:
+            - listitem [ref=e58]:
+              - link "Digital downloads" [ref=e59] [cursor=pointer]:
                 - /url: /digital-downloads
-            - listitem [ref=e65]:
-              - link "Jewelry" [ref=e66] [cursor=pointer]:
+            - listitem [ref=e60]:
+              - link "Jewelry" [ref=e61] [cursor=pointer]:
                 - /url: /jewelry
-            - listitem [ref=e67]:
-              - link "Gift Cards" [ref=e68] [cursor=pointer]:
+            - listitem [ref=e62]:
+              - link "Gift Cards" [ref=e63] [cursor=pointer]:
                 - /url: /gift-cards
-        - generic [ref=e69]:
-          - strong [ref=e71]: Manufacturers
-          - list [ref=e73]:
-            - listitem [ref=e74]:
-              - link "Tricentis" [ref=e75] [cursor=pointer]:
+        - generic [ref=e64]:
+          - strong [ref=e66]: Manufacturers
+          - list [ref=e68]:
+            - listitem [ref=e69]:
+              - link "Tricentis" [ref=e70] [cursor=pointer]:
                 - /url: /tricentis
-        - generic [ref=e76]:
-          - strong [ref=e78]: Newsletter
-          - generic [ref=e80]:
+        - generic [ref=e71]:
+          - strong [ref=e73]: Popular tags
+          - generic [ref=e74]:
+            - list [ref=e76]:
+              - listitem [ref=e77]:
+                - link "apparel" [ref=e78] [cursor=pointer]:
+                  - /url: /producttag/4/apparel
+              - listitem [ref=e79]:
+                - link "awesome" [ref=e80] [cursor=pointer]:
+                  - /url: /producttag/8/awesome
+              - listitem [ref=e81]:
+                - link "book" [ref=e82] [cursor=pointer]:
+                  - /url: /producttag/10/book
+              - listitem [ref=e83]:
+                - link "camera" [ref=e84] [cursor=pointer]:
+                  - /url: /producttag/13/camera
+              - listitem [ref=e85]:
+                - link "cell" [ref=e86] [cursor=pointer]:
+                  - /url: /producttag/12/cell
+              - listitem [ref=e87]:
+                - link "compact" [ref=e88] [cursor=pointer]:
+                  - /url: /producttag/9/compact
+              - listitem [ref=e89]:
+                - link "computer" [ref=e90] [cursor=pointer]:
+                  - /url: /producttag/6/computer
+              - listitem [ref=e91]:
+                - link "cool" [ref=e92] [cursor=pointer]:
+                  - /url: /producttag/3/cool
+              - listitem [ref=e93]:
+                - link "digital" [ref=e94] [cursor=pointer]:
+                  - /url: /producttag/16/digital
+              - listitem [ref=e95]:
+                - link "jeans" [ref=e96] [cursor=pointer]:
+                  - /url: /producttag/14/jeans
+              - listitem [ref=e97]:
+                - link "jewelry" [ref=e98] [cursor=pointer]:
+                  - /url: /producttag/11/jewelry
+              - listitem [ref=e99]:
+                - link "nice" [ref=e100] [cursor=pointer]:
+                  - /url: /producttag/1/nice
+              - listitem [ref=e101]:
+                - link "shirt" [ref=e102] [cursor=pointer]:
+                  - /url: /producttag/5/shirt
+              - listitem [ref=e103]:
+                - link "shoes" [ref=e104] [cursor=pointer]:
+                  - /url: /producttag/7/shoes
+              - listitem [ref=e105]:
+                - link "TCP" [ref=e106] [cursor=pointer]:
+                  - /url: /producttag/19/tcp
+            - link "View all" [ref=e108] [cursor=pointer]:
+              - /url: /producttag/all
+      - generic [ref=e109]:
+        - generic [ref=e110]:
+          - strong [ref=e112]: Newsletter
+          - generic [ref=e114]:
             - text: "Sign up for our newsletter:"
-            - textbox [ref=e82]
-            - button "Subscribe" [ref=e84] [cursor=pointer]
-      - generic [ref=e85]:
-        - list [ref=e87]:
-          - listitem [ref=e88]:
-            - link "Home" [ref=e90] [cursor=pointer]:
-              - /url: /
-            - text: /
-          - listitem [ref=e91]:
-            - link "Electronics" [ref=e93] [cursor=pointer]:
-              - /url: /electronics
-            - text: /
-          - listitem [ref=e94]:
-            - link "Camera, photo" [ref=e96] [cursor=pointer]:
-              - /url: /camera-photo
-            - text: /
-          - listitem [ref=e97]:
-            - strong [ref=e98]: 1MP 60GB Hard Drive Handycam Camcorder
-        - generic [ref=e102]:
-          - generic [ref=e103]:
-            - img "Picture of 1MP 60GB Hard Drive Handycam Camcorder" [ref=e106]
-            - generic [ref=e107]:
-              - heading "1MP 60GB Hard Drive Handycam Camcorder" [level=1] [ref=e109]
-              - generic [ref=e110]: Capture video to hard disk drive; 60 GB storage
-              - generic [ref=e111]: "Availability: In stock"
-              - generic [ref=e116]:
-                - link "495 review(s)" [ref=e117] [cursor=pointer]:
-                  - /url: /productreviews/44
-                - text: "|"
-                - link "Add your review" [ref=e118] [cursor=pointer]:
-                  - /url: /productreviews/44
-              - generic [ref=e120]: "349.00"
-              - button "Email a friend" [ref=e123] [cursor=pointer]
-              - button "Add to compare list" [ref=e125] [cursor=pointer]
-            - paragraph [ref=e127]: You’ll never miss a moment because of switching tapes or discs with this exclusive Tricentis camcorder. Its built-in 60GB hard disk drive offers plenty of storage as you zero in on your subjects with the professional-quality lens and a powerful 25x optical/2000x digital zoom. Compose shots using the 2.7-inch wide (16:9) touch-panel LCD display, and maintain total control and clarity with the super steady shot image stabilization system. Hybrid recording technology even gives you the choice to record video to either the internal hard disk drive or removable memory stick.
-          - generic [ref=e128]:
-            - generic [ref=e129]:
-              - strong [ref=e131]: Product tags
-              - generic:
-                - list:
-                  - listitem [ref=e132]:
-                    - link "cool" [ref=e133] [cursor=pointer]:
-                      - /url: /producttag/3/cool
-                    - text: (17)
-                  - listitem [ref=e134]: ","
-                  - listitem [ref=e135]:
-                    - link "awesome" [ref=e136] [cursor=pointer]:
-                      - /url: /producttag/8/awesome
-                    - text: (20)
-                  - listitem [ref=e137]: ","
-                  - listitem [ref=e138]:
-                    - link "camera" [ref=e139] [cursor=pointer]:
-                      - /url: /producttag/13/camera
-                    - text: (3)
-            - generic [ref=e140]:
-              - strong [ref=e142]: Customers who bought this item also bought
-              - generic [ref=e144]:
-                - link "Picture of 50's Rockabilly Polka Dot Top JR Plus Size" [ref=e146] [cursor=pointer]:
-                  - /url: /50s-rockabilly-polka-dot-top-jr-plus-size
-                  - img "Picture of 50's Rockabilly Polka Dot Top JR Plus Size" [ref=e147]
-                - generic [ref=e148]:
-                  - heading "50's Rockabilly Polka Dot Top JR Plus Size" [level=2] [ref=e149]:
-                    - link "50's Rockabilly Polka Dot Top JR Plus Size" [ref=e150] [cursor=pointer]:
-                      - /url: /50s-rockabilly-polka-dot-top-jr-plus-size
-                  - generic "546 review(s)" [ref=e151]
-                  - generic [ref=e154]:
-                    - generic [ref=e156]: "11.00"
-                    - button "Add to cart" [ref=e158] [cursor=pointer]
-              - generic [ref=e160]:
-                - link "Picture of Blue Jeans" [ref=e162] [cursor=pointer]:
-                  - /url: /blue-jeans
-                  - img "Picture of Blue Jeans" [ref=e163]
-                - generic [ref=e164]:
-                  - heading "Blue Jeans" [level=2] [ref=e165]:
-                    - link "Blue Jeans" [ref=e166] [cursor=pointer]:
-                      - /url: /blue-jeans
-                  - generic "613 review(s)" [ref=e167]
-                  - generic [ref=e170]:
-                    - generic [ref=e172]: "1.00"
-                    - button "Add to cart" [ref=e174] [cursor=pointer]
-              - generic [ref=e176]:
-                - link "Picture of 3rd Album" [ref=e178] [cursor=pointer]:
-                  - /url: /album-3
-                  - img "Picture of 3rd Album" [ref=e179]
-                - generic [ref=e180]:
-                  - heading "3rd Album" [level=2] [ref=e181]:
-                    - link "3rd Album" [ref=e182] [cursor=pointer]:
-                      - /url: /album-3
-                  - generic "451 review(s)" [ref=e183]
-                  - generic [ref=e186]:
-                    - generic [ref=e188]: "1.00"
-                    - button "Add to cart" [ref=e190] [cursor=pointer]
-            - generic [ref=e191]:
-              - strong [ref=e193]: Related products
-              - generic [ref=e195]:
-                - link "Picture of Smartphone" [ref=e197] [cursor=pointer]:
-                  - /url: /smartphone
-                  - img "Picture of Smartphone" [ref=e198]
-                - generic [ref=e199]:
-                  - heading "Smartphone" [level=2] [ref=e200]:
-                    - link "Smartphone" [ref=e201] [cursor=pointer]:
-                      - /url: /smartphone
-                  - generic "1853 review(s)" [ref=e202]
-                  - generic [ref=e205]:
-                    - generic [ref=e207]: "100.00"
-                    - button "Add to cart" [ref=e209] [cursor=pointer]
-              - generic [ref=e211]:
-                - link "Picture of Camcorder" [ref=e213] [cursor=pointer]:
-                  - /url: /camcorder
-                  - img "Picture of Camcorder" [ref=e214]
-                - generic [ref=e215]:
-                  - heading "Camcorder" [level=2] [ref=e216]:
-                    - link "Camcorder" [ref=e217] [cursor=pointer]:
-                      - /url: /camcorder
-                  - generic "511 review(s)" [ref=e218]
-                  - generic [ref=e223]: "530.00"
-              - generic [ref=e225]:
-                - link "Picture of Digital SLR Camera 12.2 Mpixel" [ref=e227] [cursor=pointer]:
-                  - /url: /digital-slr-camera
-                  - img "Picture of Digital SLR Camera 12.2 Mpixel" [ref=e228]
-                - generic [ref=e229]:
-                  - heading "Digital SLR Camera 12.2 Mpixel" [level=2] [ref=e230]:
-                    - link "Digital SLR Camera 12.2 Mpixel" [ref=e231] [cursor=pointer]:
-                      - /url: /digital-slr-camera
-                  - generic "415 review(s)" [ref=e232]
-                  - generic [ref=e237]: From 500.00
+            - textbox [ref=e116]
+            - button "Subscribe" [ref=e118] [cursor=pointer]
+        - generic [ref=e119]:
+          - strong [ref=e121]: Community poll
+          - generic [ref=e123]:
+            - strong [ref=e124]: Do you like nopCommerce?
+            - list [ref=e125]:
+              - listitem [ref=e126]: Excellent (5702 vote(s) - 47.3%)
+              - listitem [ref=e127]: Good (3269 vote(s) - 27.1%)
+              - listitem [ref=e128]: Poor (760 vote(s) - 6.3%)
+              - listitem [ref=e129]: Very bad (2322 vote(s) - 19.3%)
+            - text: 12053 vote(s)...
+      - generic [ref=e132]:
+        - generic:
+          - generic:
+            - link:
+              - /url: https://www.tricentis.com/speed/
+            - link:
+              - /url: https://academy.tricentis.com
+        - generic [ref=e133]:
+          - heading "Welcome to our store" [level=2] [ref=e135]
+          - generic [ref=e136]:
+            - paragraph [ref=e137]: Welcome to the new Tricentis store!
+            - paragraph [ref=e138]: Feel free to shop around and explore everything.
+        - generic [ref=e139]:
+          - strong [ref=e141]: Featured products
+          - generic [ref=e143]:
+            - link "Picture of $25 Virtual Gift Card" [ref=e145] [cursor=pointer]:
+              - /url: /25-virtual-gift-card
+              - img "Picture of $25 Virtual Gift Card" [ref=e146]
+            - generic [ref=e147]:
+              - heading "$25 Virtual Gift Card" [level=2] [ref=e148]:
+                - link "$25 Virtual Gift Card" [ref=e149] [cursor=pointer]:
+                  - /url: /25-virtual-gift-card
+              - generic "821 review(s)" [ref=e150]
+              - generic [ref=e153]:
+                - generic [ref=e155]: "25.00"
+                - button "Add to cart" [ref=e157] [cursor=pointer]
+          - generic [ref=e159]:
+            - link "Picture of 14.1-inch Laptop" [ref=e161] [cursor=pointer]:
+              - /url: /141-inch-laptop
+              - img "Picture of 14.1-inch Laptop" [ref=e162]
+            - generic [ref=e163]:
+              - heading "14.1-inch Laptop" [level=2] [ref=e164]:
+                - link "14.1-inch Laptop" [ref=e165] [cursor=pointer]:
+                  - /url: /141-inch-laptop
+              - generic "1492 review(s)" [ref=e166]
+              - generic [ref=e169]:
+                - generic [ref=e171]: "1590.00"
+                - button "Add to cart" [ref=e173] [cursor=pointer]
+          - generic [ref=e175]:
+            - link "Picture of Build your own cheap computer" [ref=e177] [cursor=pointer]:
+              - /url: /build-your-cheap-own-computer
+              - img "Picture of Build your own cheap computer" [ref=e178]
+            - generic [ref=e179]:
+              - heading "Build your own cheap computer" [level=2] [ref=e180]:
+                - link "Build your own cheap computer" [ref=e181] [cursor=pointer]:
+                  - /url: /build-your-cheap-own-computer
+              - generic "824 review(s)" [ref=e182]
+              - generic [ref=e185]:
+                - generic [ref=e187]: "800.00"
+                - button "Add to cart" [ref=e189] [cursor=pointer]
+          - generic [ref=e191]:
+            - link "Picture of Build your own computer" [ref=e193] [cursor=pointer]:
+              - /url: /build-your-own-computer
+              - img "Picture of Build your own computer" [ref=e194]
+            - generic [ref=e195]:
+              - heading "Build your own computer" [level=2] [ref=e196]:
+                - link "Build your own computer" [ref=e197] [cursor=pointer]:
+                  - /url: /build-your-own-computer
+              - generic "335 review(s)" [ref=e198]
+              - generic [ref=e201]:
+                - generic [ref=e203]: "1200.00"
+                - button "Add to cart" [ref=e205] [cursor=pointer]
+          - generic [ref=e207]:
+            - link "Picture of Build your own expensive computer" [ref=e209] [cursor=pointer]:
+              - /url: /build-your-own-expensive-computer-2
+              - img "Picture of Build your own expensive computer" [ref=e210]
+            - generic [ref=e211]:
+              - heading "Build your own expensive computer" [level=2] [ref=e212]:
+                - link "Build your own expensive computer" [ref=e213] [cursor=pointer]:
+                  - /url: /build-your-own-expensive-computer-2
+              - generic "425 review(s)" [ref=e214]
+              - generic [ref=e217]:
+                - generic [ref=e219]: "1800.00"
+                - button "Add to cart" [ref=e221] [cursor=pointer]
+          - generic [ref=e223]:
+            - link "Picture of Simple Computer" [ref=e225] [cursor=pointer]:
+              - /url: /simple-computer
+              - img "Picture of Simple Computer" [ref=e226]
+            - generic [ref=e227]:
+              - heading "Simple Computer" [level=2] [ref=e228]:
+                - link "Simple Computer" [ref=e229] [cursor=pointer]:
+                  - /url: /simple-computer
+              - generic "386 review(s)" [ref=e230]
+              - generic [ref=e233]:
+                - generic [ref=e235]: "800.00"
+                - button "Add to cart" [ref=e237] [cursor=pointer]
   - generic [ref=e238]:
     - generic [ref=e239]:
       - generic [ref=e240]:
