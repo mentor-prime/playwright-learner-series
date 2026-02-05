@@ -4,17 +4,13 @@ const { Users } = require("../../test-data/Users");
 
 test.describe.configure({ mode: "parallel" });
 
-test("@PA-220 Dashboard - Verify that user information is correctly showed", async ({ dashboardPage, loginPage }) => {
+test("@PA-220 Dashboard - Verify that user information is correctly showed", { tag: ['@dashboard', '@login']}, async ({ dashboardPage, loginPage }) => {
     await dashboardPage.open();
     await dashboardPage.expectLoginVisible();
     await dashboardPage.clickLogin();
-
     await loginPage.verifyFieldsAtLoginPage();
     await loginPage.fillCredentials();
     await loginPage.clickLoginButton();
-
-    // If Login redirects back to dashboard:
-    // otherwise you can add a dashboardPage.waitForDashboard() method
     await dashboardPage.expectUserLoggedIn(Users.username);
 });
 

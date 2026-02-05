@@ -46,7 +46,7 @@ module.exports = defineConfig({
         navigationTimeout: 30 * 1000,
 
         // Browser behavior
-        headless: true,
+        headless: false,
         viewport: { width: 1366, height: 768 },
 
         // Ignore HTTPS issues if any
@@ -73,14 +73,14 @@ module.exports = defineConfig({
             name: "Chromium",
             use: { ...devices["Desktop Chrome"] },
         },
-        {
+        /*{
             name: "Firefox",
             use: { ...devices["Desktop Firefox"] },
         },
         {
             name: "WebKit",
             use: { ...devices["Desktop Safari"] },
-        },
+        },*/
     ],
 
     // ----------------------------

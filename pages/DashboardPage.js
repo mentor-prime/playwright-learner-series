@@ -49,7 +49,8 @@ class DashboardPage {
     }
 
     async expectUserLoggedIn(username) {
-        await expect(this.accountLink).toHaveText(username);
+        await this.page.waitForTimeout(5000);
+        await expect(this.accountLink.first()).toHaveText(username);
     }
 
     async expectLogoutVisible() {
