@@ -28,14 +28,14 @@ test("@PA-222 Dashboard - Check the shopping cart displays the correct number of
     await dashboardPage.expectCartQty(1);
 });
 
-test("@PA-223 Dashboard - verify the count displayed on wishlist", async ({ loggedInDashboard, page }) => {
+test("@PA-223 Dashboard - verify the count displayed on wishlist", { tag: ['@dashboard', '@wishlist']},async ({ loggedInDashboard, page }) => {
     // const page = loggedInDashboard.page; // ✅ loggedInDashboard is DashboardPage object
     const pdp = new PDP(page);
 
     const initialCount = await pdp.getWishlistCount();
     console.log(`Initial wishlist count: ${initialCount}`);
 
-    await pdp.openCategory("Electronics");
+    await pdp.openCategory("Apparel & Shoes");
     await pdp.openFirstItemFromCategory();
     await pdp.addProductToWishList();
 
