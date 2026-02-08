@@ -14,13 +14,13 @@ test("@PA-220 Dashboard - Verify that user information is correctly showed", { t
     await dashboardPage.expectUserLoggedIn(Users.username);
 });
 
-test("@PA-221 Dashboard - Verify that logout link is working properly", async ({ loggedInDashboard }) => {
+test("@PA-221 Dashboard - Verify that logout link is working properly", { tag: ['@dashboard', '@login']}, async ({ loggedInDashboard }) => {
     await loggedInDashboard.expectLogoutVisible();
     await loggedInDashboard.clickLogout();
     await loggedInDashboard.expectUserLoggedOut(Users.username);
 });
 
-test("@PA-222 Dashboard - Check the shopping cart displays the correct number of items", async ({ dashboardPage }) => {
+test("@PA-222 Dashboard - Check the shopping cart displays the correct number of items", { tag: ['@dashboard', '@login']}, async ({ dashboardPage }) => {
     await dashboardPage.open();
     await dashboardPage.expectLoginVisible();
 
@@ -45,11 +45,11 @@ test("@PA-223 Dashboard - verify the count displayed on wishlist", { tag: ['@das
     console.log(`✅ Test passed - Wishlist count updated from ${initialCount} to ${updatedCount}`);
 });
 
-test("@PA-224 Dashboard - Verify that each category link leads to the correct category page", async ({ loggedInDashboard }) => {
+test("@PA-224 Dashboard - Verify that each category link leads to the correct category page", { tag: ['@dashboard', '@login']}, async ({ loggedInDashboard }) => {
     await loggedInDashboard.verifyTopMenuNavigations();
 });
 
-test("@PA-225 - Dashboard - Check the functionality of subscribing to the newsletter", async ({ dashboardPage }) => {
+test("@PA-225 - Dashboard - Check the functionality of subscribing to the newsletter", { tag: ['@dashboard', '@login']}, async ({ dashboardPage }) => {
     await dashboardPage.open();
     await dashboardPage.expectLoginVisible();
     await dashboardPage.expectNewsletterBlockVisible();
