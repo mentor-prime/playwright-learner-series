@@ -65,3 +65,25 @@ test("@PA-228 - Dashboard - Verify that clicking the Gift Cards category link co
 test("@PA-229 - Dashboard - Verify if featured products section is visible", {tag: ["@dashboard"]}, async ({loggedInDashboard, dashboardPage }) => {
     dashboardPage.verifyFeaturedProductsSectionsIsDisplayed();
 });
+
+
+test(
+    "@PA-226 Dashboard - Check newsletter subscription on empty email box",
+    { tag: ["@dashboard", "@newsletter", "@negative"] },
+    async ({ dashboardPage }) => {
+        // Arrange
+        await dashboardPage.open();
+        await dashboardPage.expectNewsletterBlockVisible();
+
+        // Pre-condition: newsletter email is empty
+        await dashboardPage.clearNewsletterEmail();
+        await dashboardPage.expectNewsletterEmailToBeEmpty();
+
+        // Act
+        await dashboardPage.clickNewsletterSubscribe();
+
+        // Assert
+        await dashboardPage.expectNewsletterEmptyEmailValidation();
+        await dashboardPage.expectNewsletterSuccessMessageNotVisible();
+    }
+);

@@ -72,11 +72,13 @@
       "line": 0,
       "specs": [
         {
-          "title": "@PA-229 - Dashboard - Verify if featured products section is visible",
+          "title": "@PA-226 Dashboard - Check newsletter subscription on empty email box",
           "ok": true,
           "tags": [
-            "PA-229",
-            "dashboard"
+            "PA-226",
+            "dashboard",
+            "newsletter",
+            "negative"
           ],
           "tests": [
             {
@@ -90,12 +92,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 9259,
+                  "duration": 4911,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-02-15T11:27:28.904Z",
+                  "startTime": "2026-02-15T12:43:04.697Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -103,9 +105,9 @@
               "status": "expected"
             }
           ],
-          "id": "57034cf0180fbfd474dc-07e5ce8f7ed335307057",
+          "id": "57034cf0180fbfd474dc-0511b2331de7ec82856c",
           "file": "ui/dashboard.spec.js",
-          "line": 65,
+          "line": 70,
           "column": 1
         }
       ]
@@ -113,8 +115,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-02-15T11:27:28.401Z",
-    "duration": 10222.338,
+    "startTime": "2026-02-15T12:43:04.095Z",
+    "duration": 6105.251,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,

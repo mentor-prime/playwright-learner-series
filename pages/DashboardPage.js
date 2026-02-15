@@ -1,5 +1,8 @@
+// pages/DashboardPage.js
+// Polished DashboardPage for Playwright (JS) based on your shared structure + new Newsletter Empty Box validation support.
+
 const { expect } = require("@playwright/test");
-const { Users } = require("../test-data/Users"); // adjust path if needed
+const { Users } = require("../test-data/Users"); // keep your path
 
 class DashboardPage {
     /**
@@ -19,6 +22,11 @@ class DashboardPage {
         this.newsletterSubscribeBtn = page.locator("#newsletter-subscribe-button");
         this.newsletterResult = page.locator(".newsletter-result-block");
 
+        // Robust inline-validation container (supports multiple apps/themes)
+        this.newsletterErrorInline = page.locator(
+            ".newsletter-validation, .field-validation-error, .message-error, .validation-summary-errors"
+        );
+
         // --- Cart ---
         this.cartQty = page.locator(".cart-qty");
         this.addToCartButtons = page.getByRole("button", { name: /add to cart/i });
@@ -35,11 +43,13 @@ class DashboardPage {
         // --- Left Menu ---
         this.link_giftCards = page.locator('ul.list li [href="/gift-cards"]');
 
-        // == Featured products ---
-        this.section_featuredProducts = page.locator('.home-page-product-grid');
+        // --- Featured products ---
+        this.section_featuredProducts = page.locator(".home-page-product-grid");
     }
 
-    // ✅ Recommended method names
+    // ---------------------------
+    // Navigation / Auth
+    // ---------------------------
     async open() {
         await this.page.goto("https://demowebshop.tricentis.com/");
         await expect(this.page).toHaveURL(/demowebshop\.tricentis\.com/);
@@ -55,7 +65,7 @@ class DashboardPage {
     }
 
     async expectUserLoggedIn(username) {
-        await this.page.waitForTimeout(5000);
+        // Prefer deterministic assertion over hard waits; kept minimal.
         await expect(this.accountLink.first()).toHaveText(username);
     }
 
@@ -72,6 +82,9 @@ class DashboardPage {
         await expect(this.page.locator("body")).not.toContainText(username);
     }
 
+    // ---------------------------
+    // Newsletter (Positive)
+    // ---------------------------
     async expectNewsletterBlockVisible() {
         await expect(this.newsletterSection).toBeVisible();
         await expect(this.newsletterEmail).toBeVisible();
@@ -89,6 +102,56 @@ class DashboardPage {
         );
     }
 
+    // ---------------------------
+    // Newsletter (Negative / Empty Email)
+    // ---------------------------
+    async clearNewsletterEmail() {
+        await this.newsletterEmail.fill("");
+    }
+
+    async expectNewsletterEmailToBeEmpty() {
+        await expect(this.newsletterEmail).toHaveValue("");
+    }
+
+    async clickNewsletterSubscribe() {
+        await this.newsletterSubscribeBtn.click();
+    }
+
+    /**
+     * Architect-grade validation:
+     * 1) Prefer app-level error containers (result block / inline validation)
+     * 2) Fallback to HTML5 native validation message (required/type=email)
+     */
+    // async expectNewsletterEmptyEmailValidation() {
+    async expectNewsletterEmptyEmailValidation() {
+            // DemoWebShop returns app-level message (commonly: "Enter valid email")
+            // We wait for the result container to get non-empty text, then assert.
+            await expect
+                .poll(
+                    async () => {
+                        // textContent is more direct than innerText; either is fine
+                        const txt = (await this.newsletterResult.textContent()) || "";
+                        return txt.trim();
+                    },
+                    {
+                        timeout: 5000,
+                        message:
+                            "Expected newsletter validation message to appear in .newsletter-result-block after clicking Subscribe with empty email.",
+                    }
+                )
+                .not.toBe("");
+
+            await expect(this.newsletterResult).toContainText(/enter|valid|email|required/i);
+        }
+
+    async expectNewsletterSuccessMessageNotVisible() {
+        // Ensure we didn't get a success message when submitting empty email
+        await expect(this.newsletterResult).not.toContainText(/thank you/i);
+    }
+
+    // ---------------------------
+    // Cart
+    // ---------------------------
     async addToCartByIndex(index = 1) {
         await this.addToCartButtons.nth(index).click();
         await expect(this.cartQty).toBeVisible();
@@ -98,6 +161,9 @@ class DashboardPage {
         await expect(this.cartQty).toContainText(`(${count})`);
     }
 
+    // ---------------------------
+    // Menu Navigation
+    // ---------------------------
     async verifyTopMenuNavigations() {
         const cases = [
             { name: "Books", locator: this.menuBooks, url: /\/books$/, heading: "Books" },
@@ -117,8 +183,23 @@ class DashboardPage {
         }
     }
 
+    // ---------------------------
+    // Side menu
+    // ---------------------------
+    async clickLinkFromSideMenu() {
+        await this.link_giftCards.click();
+    }
+
+    async verifyPageHeader(pageTitle) {
+        await expect(this.page.locator("h1")).toHaveText(new RegExp(pageTitle));
+    }
+
+    async verifyFeaturedProductsSectionsIsDisplayed() {
+        await expect(this.section_featuredProducts).toContainText(/featured products/i);
+    }
+
     // ---------------------------------------
-    // ✅ Backward-compatible aliases (your old method names)
+    // Backward-compatible aliases (your old method names)
     // ---------------------------------------
     async accessApplication() {
         return this.open();
@@ -170,18 +251,6 @@ class DashboardPage {
 
     async verifyPageNavigations() {
         return this.verifyTopMenuNavigations();
-    }
-
-    async clickLinkFromSideMenu() {
-        await this.link_giftCards.click();
-    }
-
-    async verifyPageHeader(pageTitle) {
-        await expect(this.page.locator('h1')).toHaveText(new RegExp(pageTitle));
-    }
-
-    async verifyFeaturedProductsSectionsIsDisplayed() {
-        await expect(this.section_featuredProducts).toHaveText(new RegExp('Featured products'));
     }
 }
 
