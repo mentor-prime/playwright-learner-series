@@ -72,9 +72,10 @@
       "line": 0,
       "specs": [
         {
-          "title": "Dashboard - Verify that clicking the Gift Cards category link correctly displays gift card products",
+          "title": "@PA-229 - Dashboard - Verify if featured products section is visible",
           "ok": true,
           "tags": [
+            "PA-229",
             "dashboard"
           ],
           "tests": [
@@ -89,12 +90,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 9810,
+                  "duration": 9259,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-02-15T10:08:55.304Z",
+                  "startTime": "2026-02-15T11:27:28.904Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -102,9 +103,9 @@
               "status": "expected"
             }
           ],
-          "id": "57034cf0180fbfd474dc-f2813367e5eea17eb7ff",
+          "id": "57034cf0180fbfd474dc-07e5ce8f7ed335307057",
           "file": "ui/dashboard.spec.js",
-          "line": 60,
+          "line": 65,
           "column": 1
         }
       ]
@@ -112,8 +113,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-02-15T10:08:54.752Z",
-    "duration": 11037.375999999998,
+    "startTime": "2026-02-15T11:27:28.401Z",
+    "duration": 10222.338,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,

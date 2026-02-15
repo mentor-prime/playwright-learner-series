@@ -58,7 +58,10 @@ test("@PA-225 - Dashboard - Check the functionality of subscribing to the newsle
 });
 
 test("@PA-228 - Dashboard - Verify that clicking the Gift Cards category link correctly displays gift card products", { tag: ['@dashboard']}, async ({loggedInDashboard, dashboardPage}) => {
-    // await loggedInDashboard.expectUserLoggedOut(Users.username);
     await dashboardPage.clickLinkFromSideMenu();
     await dashboardPage.verifyPageHeader("Gift Cards");
+});
+
+test("@PA-229 - Dashboard - Verify if featured products section is visible", {tag: ["@dashboard"]}, async ({loggedInDashboard, dashboardPage }) => {
+    dashboardPage.verifyFeaturedProductsSectionsIsDisplayed();
 });

@@ -34,6 +34,9 @@ class DashboardPage {
 
         // --- Left Menu ---
         this.link_giftCards = page.locator('ul.list li [href="/gift-cards"]');
+
+        // == Featured products ---
+        this.section_featuredProducts = page.locator('.home-page-product-grid');
     }
 
     // ✅ Recommended method names
@@ -175,6 +178,10 @@ class DashboardPage {
 
     async verifyPageHeader(pageTitle) {
         await expect(this.page.locator('h1')).toHaveText(new RegExp(pageTitle));
+    }
+
+    async verifyFeaturedProductsSectionsIsDisplayed() {
+        await expect(this.section_featuredProducts).toHaveText(new RegExp('Featured products'));
     }
 }
 
