@@ -56,3 +56,11 @@ test("@PA-225 - Dashboard - Check the functionality of subscribing to the newsle
     await dashboardPage.subscribeToNewsletter(Users.username);
     await dashboardPage.expectNewsletterSuccessMessage();
 });
+
+test("Dashboard - Verify that clicking the Gift Cards category link correctly displays gift card products", { tag: ['@dashboard']}, async ({loggedInDashboard, dashboardPage}) => {
+    // await loggedInDashboard.expectUserLoggedOut(Users.username);
+    await dashboardPage.clickLinkFromSideMenu();
+    await dashboardPage.verifyPageHeader("Gift Cards");
+
+
+});

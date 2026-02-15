@@ -31,6 +31,9 @@ class DashboardPage {
         this.menuDigitalDownloads = page.locator('ul.top-menu a[href="/digital-downloads"]');
         this.menuJewelry = page.locator('ul.top-menu a[href="/jewelry"]');
         this.menuGiftCards = page.locator('ul.top-menu a[href="/gift-cards"]');
+
+        // --- Left Menu ---
+        this.link_giftCards = page.locator('ul.list li [href="/gift-cards"]');
     }
 
     // ✅ Recommended method names
@@ -164,6 +167,14 @@ class DashboardPage {
 
     async verifyPageNavigations() {
         return this.verifyTopMenuNavigations();
+    }
+
+    async clickLinkFromSideMenu() {
+        await this.link_giftCards.click();
+    }
+
+    async verifyPageHeader(pageTitle) {
+        await expect(this.page.locator('h1')).toHaveText(new RegExp(pageTitle));
     }
 }
 
