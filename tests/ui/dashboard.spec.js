@@ -68,7 +68,7 @@ test("@PA-229 - Dashboard - Verify if featured products section is visible", {ta
 
 
 test(
-    "@PA-226 Dashboard - Check newsletter subscription on empty email box",
+    "@PA-230 Dashboard - Check newsletter subscription on empty email box",
     { tag: ["@dashboard", "@newsletter", "@negative"] },
     async ({ dashboardPage }) => {
         // Arrange
