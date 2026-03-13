@@ -18,6 +18,17 @@ class PDP {
             "Gift Cards": "gift_cards"
         };
 
+        // const categoryMap = {
+        //     "Books": "books",
+        //     "Computers": "computers",
+        //     "Electronics": "electronics",
+        //     "Apparel & Shoes": "apparel_and_shoes",
+        //     "Apparel Shoes": "apparel_and_shoes",
+        //     "Digital Downloads": "digital_downloads",
+        //     "Jewelry": "jewelry",
+        //     "Gift Cards": "gift_cards"
+        // };
+
         const normalizedCategory = categoryMap[category] || category.toLowerCase().replace(/ /g, "_");
         const categorySelector = this.selectors.categories[normalizedCategory];
 
