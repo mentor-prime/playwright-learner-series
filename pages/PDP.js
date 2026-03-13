@@ -47,6 +47,9 @@ class PDP {
         await this.page.waitForLoadState('networkidle');
     }
 
+    // async openFirstItemFromCategory() {
+    // }
+
     async addProductToWishList() {
         await this.page.waitForSelector(this.selectors.pdp.product_essential);
         await this.page.click(this.selectors.pdp.add_to_wishlist);
